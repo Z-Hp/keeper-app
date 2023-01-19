@@ -1,4 +1,5 @@
 import "./App.css";
+import notes from "../src/notes";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -8,8 +9,12 @@ function App() {
   return (
     <div className="App">
       <Header />
+
+      {notes.map((note) => (
+        <Note key={note.key} title={note.title} content={note.content} />
+      ))}
+
       <Footer />
-      <Note />
     </div>
   );
 }
